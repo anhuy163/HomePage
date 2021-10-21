@@ -6,7 +6,11 @@ import { AiOutlineHome } from "react-icons/ai";
 import { BsClipboardData } from "react-icons/bs";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiLogOut } from "react-icons/bi";
+import { BsChatDots } from "react-icons/bs";
+import { BsFillBarChartLineFill } from "react-icons/bs";
 import { MdOutlineNightsStay } from "react-icons/md";
+import { GrScorecard } from "react-icons/gr";
+import { GrNotification } from "react-icons/gr";
 
 const NavBar = () => {
   const [isActive1, setActive1] = React.useState("true");
@@ -28,12 +32,14 @@ const NavBar = () => {
       setText2("homewallpaper open");
       setText3("elements open");
       if (text5 === "notifications") setText5("notifications open");
+      if (text7 === "scoreboard") setText7("scoreboard open");
     } else {
       setText("sidebar");
       if (text1 === "homepage open") setText1("homepage");
       setText2("homewallpaper");
       setText3("elements");
       if (text5 === "notifications open") setText5("notifications");
+      if (text7 === "scoreboard open") setText7("scoreboard");
     }
   };
   const activeLi1 = () => {
@@ -189,14 +195,71 @@ const NavBar = () => {
             QUẢN LÝ <span id='student'>SINH VIÊN</span>
           </p>
           <hr className={text3} id='homehr' />
-          <img
-            className={text2}
-            src='https://images4.alphacoders.com/861/thumb-1920-861900.png'></img>
+          <div className='introduction'>
+            <h1 className='manage'>
+              Everything
+              <div id='_manage'>you need to manage your</div> educational
+              institution
+            </h1>
+            <div className='manage_1'>Classe 369</div>
+            <p id='_intro1'>
+              Classe369 là 1 phần mềm tiện ích giúp quản lý sinh viên một cách
+              ngắn gọn và đầy đủ nhất thông qua những thống kê xác thực nhất và
+              nhanh nhất
+            </p>
+            <img
+              className={text2}
+              src='https://images4.alphacoders.com/861/thumb-1920-861900.png'></img>
+            <div className='footer1'>
+              <h1 id='_footer1'>
+                No More Data Silos - Just Unified School Management Software
+              </h1>
+              <p id='_footer2'>
+                Hàng ngàn tổ chức giáo dục ngày nay sử dụng hệ thống quản lý
+                trường học phân mảnh và nền tảng phần mềm để quản lý các hoạt
+                động hành chính và học tập của họ. Classe369 cung cấp một giải
+                pháp hợp nhất tất cả trong một nền tảng đơn giản và đẹp mắt.
+              </p>
+            </div>
+
+            {/* FOOTER CHUC NANG */}
+
+            <div className='footer2'>
+              <h1 id='_footer1'>Classe 369 features</h1>
+              <hr className={text3} id='homehr' />
+              <div className='footer_icons'>
+                <BsChatDots />
+              </div>
+              <div className='footer_icons'>
+                <BsFillBarChartLineFill />
+              </div>
+              <div className='footer_icons'>
+                <BsClipboardData />
+              </div>
+              <div className='footer_icons'>
+                <IoMdNotificationsOutline />
+              </div>
+              <br />
+
+              <div className='footer_fn' id='footer_fn1'>
+                He thong chat
+              </div>
+              <div className='footer_fn' id='footer_fn2'>
+                Bang thong ke
+              </div>
+              <div className='footer_fn' id='footer_fn3'>
+                Bang diem
+              </div>
+              <div className='footer_fn' id='footer_fn4'>
+                Thong bao
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* BANG DIEM */}
 
-        <div className={text7}></div>
+        <div className={text7}>hiếu ngu</div>
 
         {/* THONG BAO */}
 
