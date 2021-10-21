@@ -132,6 +132,13 @@
   margin-top: 3px;
   color: #fff;
 }
+#main {
+  transition: all 0.5s ease;
+}
+#main_nightmode {
+  transition: all 0.5s ease;
+  background-color: #141229;
+}
 .night_mode {
   margin-top: 350px;
 }
@@ -181,17 +188,14 @@
   max-width: 800px;
   font-size: 3rem;
 }
-#student {
+#student,
+#noti {
   color: rgb(88, 86, 86);
   transition: all 0.5s ease;
 }
-#main {
-  transition: all 0.5s ease;
-}
-#main_nightmode {
-  background-color: #141229;
-}
-#main_nightmode .elements #student {
+
+#main_nightmode .elements #student,
+#main_nightmode .elements #noti {
   color: #fff;
   text-shadow: 1px 1px 1px #fff;
 }
@@ -218,8 +222,26 @@
 }
 .alert {
   padding: 20px;
-  background-color: #f44336;
+  background-color: #0c67b3;
   color: white;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: all 0.5s ease;
+}
+#main .alert:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #2f86ce;
+}
+#main_nightmode .alert {
+  /* max-width: 750px; */
+  background-color: rgb(100, 98, 98);
+  transition: all 0.5s ease;
+}
+.notifications.open .alert {
+  max-width: 750px;
 }
 .notiCloseBtn {
   margin-left: 15px;

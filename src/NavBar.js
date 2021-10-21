@@ -7,7 +7,6 @@ import { BsClipboardData } from "react-icons/bs";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiLogOut } from "react-icons/bi";
 import { MdOutlineNightsStay } from "react-icons/md";
-import Notification from "./Notification";
 
 const NavBar = () => {
   const [isActive1, setActive1] = React.useState("true");
@@ -20,6 +19,8 @@ const NavBar = () => {
   const [text3, setText3] = React.useState("elements");
   const [text4, setText4] = React.useState("main");
   const [text5, setText5] = React.useState("hide_noti");
+  const [text6, setText6] = React.useState("alert");
+  const [text7, setText7] = React.useState("hide_board");
   const clickHandler = () => {
     if (text === "sidebar") {
       setText("sidebar open");
@@ -68,22 +69,39 @@ const NavBar = () => {
     if (text5 === "hide_noti" && text === "sidebar") {
       setText5("notifications");
       setText1("hide_homepage");
+      setText7("hide_board");
     } else if (text5 === "hide_noti" && text === "sidebar open") {
       setText5("notifications open");
       setText1("hide_homepage");
+      setText7("hide_board");
     }
   };
   const showHomepage = () => {
     if (text1 === "hide_homepage" && text === "sidebar") {
       setText1("homepage");
       setText5("hide_noti");
+      setText7("hide_board");
     } else if (text1 === "hide_homepage" && text === "sidebar open") {
       setText1("homepage open");
+      setText5("hide_noti");
+      setText7("hide_board");
+    }
+  };
+  const showBoard = () => {
+    if (text7 === "hide_board" && text === "sidebar") {
+      setText7("scoreboard");
+      setText1("hide_homepage");
+      setText5("hide_noti");
+    } else if (text7 === "hide_board" && text === "sidebar open") {
+      setText7("scoreboard open");
+      setText1("hide_homepage");
       setText5("hide_noti");
     }
   };
   return (
     <section className='body'>
+      {/* PHAN THANH MENU */}
+
       <div className={text}>
         <div className='logo-details'>
           <div className='logo_name'>AN HUY</div>
@@ -125,6 +143,7 @@ const NavBar = () => {
               className={isActive3 === "true" ? "home" : ""}
               onClick={() => {
                 activeLi3();
+                showBoard();
               }}>
               <div className='icon'>
                 <BsClipboardData />
@@ -159,7 +178,12 @@ const NavBar = () => {
           <li></li>
         </ul>
       </div>
+
+      {/* PHAN TRANG CHU */}
+
       <div id={text4}>
+        {/* TRANG CHU */}
+
         <div className={text1}>
           <p className={text3} id='title'>
             QUẢN LÝ <span id='student'>SINH VIÊN</span>
@@ -169,8 +193,27 @@ const NavBar = () => {
             className={text2}
             src='https://images4.alphacoders.com/861/thumb-1920-861900.png'></img>
         </div>
+
+        {/* BANG DIEM */}
+
+        <div className={text7}></div>
+
+        {/* THONG BAO */}
+
         <div className={text5}>
-          <Notification />
+          <p className={text3}>
+            THÔNG<span id='noti'> BÁO</span>
+          </p>
+          <div className={text6}>
+            <span className='notiCloseBtn'>x</span>
+            <strong>From Teacher</strong>
+            An Huy rat la dep trai
+          </div>
+          <div className={text6}>
+            <span className='notiCloseBtn'>x</span>
+            <strong>From Teacher</strong>
+            An Huy rat la dep trai
+          </div>
         </div>
       </div>
     </section>
