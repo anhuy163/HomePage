@@ -192,7 +192,7 @@ const NavBar = () => {
 
         <div className={text1}>
           <p className={text3} id='title'>
-            QUẢN LÝ <span id='student'>SINH VIÊN</span>
+            Classe <span id='student'>369</span>
           </p>
           <hr className={text3} id='homehr' />
           <div className='introduction'>
@@ -209,7 +209,7 @@ const NavBar = () => {
             </p>
             <img
               className={text2}
-              src='https://images4.alphacoders.com/861/thumb-1920-861900.png'></img>
+              src='https://i.pinimg.com/originals/a5/f4/fb/a5f4fb117b65e2a5b624ef09395c4228.png'></img>
             <div className='footer1'>
               <h1 id='_footer1'>
                 No More Data Silos - Just Unified School Management Software
@@ -259,7 +259,7 @@ const NavBar = () => {
 
         {/* BANG DIEM */}
 
-        <div className={text7}>hiếu ngu</div>
+        <div className={text7}></div>
 
         {/* THONG BAO */}
 
