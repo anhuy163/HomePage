@@ -212,13 +212,7 @@
 .hide_board {
   display: none;
 }
-/* .scoreboard {
-  right: 0;
-  margin-left: 80px;
-  text-align: center;
-  height: 100vh;
-  transition: all 0.5s ease;
-} */
+
 .notifications,
 .scoreboard {
   /* max-width: 1500px; */
@@ -250,6 +244,7 @@
 #main .alert:hover {
   cursor: pointer;
   box-shadow: 1px 1px 1px #2f86ce;
+  background-color: #108bf0;
 }
 #main_nightmode .alert {
   /* max-width: 750px; */
@@ -259,15 +254,44 @@
 .notifications.open .alert {
   max-width: 750px;
 }
-.notiCloseBtn {
-  margin-left: 15px;
+.notiDetail {
+  padding: 20px;
+  background-color: #09477a;
   color: white;
-  font-weight: bold;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-top: -10px;
+  transition: all 0.5s ease;
+}
+
+#main_nightmode .notiDetail {
+  /* max-width: 750px; */
+  background-color: rgb(65, 62, 62);
+  transition: all 0.5s ease;
+}
+.notifications.open .notiDetail {
+  max-width: 730px;
+}
+#notiCloseBtn {
   float: right;
+  color: white;
   font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
+  font-weight: bold;
+  /* cursor: pointer; */
+  transition: all 0.3s ease;
+  margin-top: -25px;
+}
+#notiHiddenBtn {
+  float: left;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  /* cursor: pointer; */
+  transition: all 0.3s ease;
 }
 .hide_homepage {
   display: none;
@@ -376,4 +400,14 @@
 }
 .homepage.open .introduction .footer2 #footer_fn4 {
   margin-left: 80px;
+}
+#hiddenNotiDetail {
+  display: none;
+  transition: all 0.5s ease;
+}
+.hiddenNotiDetailBtn {
+  display: none;
+}
+.hiddenNotiDetailBtn.open {
+  display: inline;
 }

@@ -9,8 +9,11 @@ import { BiLogOut } from "react-icons/bi";
 import { BsChatDots } from "react-icons/bs";
 import { BsFillBarChartLineFill } from "react-icons/bs";
 import { MdOutlineNightsStay } from "react-icons/md";
-import { GrScorecard } from "react-icons/gr";
-import { GrNotification } from "react-icons/gr";
+// import { GrScorecard } from "react-icons/gr";
+// import { GrNotification } from "react-icons/gr";
+// import { IoIosArrowDropright } from "react-icons/io";
+import { IoIosCloseCircleOutline } from "react-icons/io";
+import { MdOutlineDelete } from "react-icons/md";
 
 const NavBar = () => {
   const [isActive1, setActive1] = React.useState("true");
@@ -25,6 +28,9 @@ const NavBar = () => {
   const [text5, setText5] = React.useState("hide_noti");
   const [text6, setText6] = React.useState("alert");
   const [text7, setText7] = React.useState("hide_board");
+  const [text8, setText8] = React.useState("hiddenNotiDetailBtn");
+  const [text9, setText9] = React.useState("hiddenNotiDetail");
+  const [text10, setText10] = React.useState("notiDetail");
   const clickHandler = () => {
     if (text === "sidebar") {
       setText("sidebar open");
@@ -103,6 +109,16 @@ const NavBar = () => {
       setText1("hide_homepage");
       setText5("hide_noti");
     }
+  };
+  const notiDetail = () => {
+    if (text9 === "hiddenNotiDetail") {
+      setText8("hiddenNotiDetailBtn open");
+      setText9("showNotiDetail");
+    }
+  };
+  const hiddenNotiDetail = () => {
+    setText8("hiddenNotiDetailBtn");
+    setText9("hiddenNotiDetail");
   };
   return (
     <section className='body'>
@@ -267,15 +283,20 @@ const NavBar = () => {
           <p className={text3}>
             THÔNG<span id='noti'> BÁO</span>
           </p>
-          <div className={text6}>
-            <span className='notiCloseBtn'>x</span>
-            <strong>From Teacher</strong>
-            An Huy rat la dep trai
+          <div className={text6} onClick={notiDetail}>
+            <div
+              className={text8}
+              id='notiHiddenBtn'
+              onClick={hiddenNotiDetail}>
+              <IoIosCloseCircleOutline></IoIosCloseCircleOutline>
+            </div>
+            <div style={{ marginLeft: "30px" }}>An Huy rat la dep trai</div>
+            <span id='notiCloseBtn'>
+              <MdOutlineDelete></MdOutlineDelete>
+            </span>
           </div>
-          <div className={text6}>
-            <span className='notiCloseBtn'>x</span>
-            <strong>From Teacher</strong>
-            An Huy rat la dep trai
+          <div className={text10} id={text9}>
+            an huy 123
           </div>
         </div>
       </div>
