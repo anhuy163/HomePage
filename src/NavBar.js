@@ -1,7 +1,10 @@
 import "boxicons";
 import React from "react";
 import ReactDOM from "react-dom";
+import { Component } from "react";
 import "./NavBar.css";
+import logo from "./weblogo3.png";
+import NotiManagement from "./NotiManagement";
 import { AiOutlineHome } from "react-icons/ai";
 import { BsClipboardData } from "react-icons/bs";
 import { IoMdNotificationsOutline } from "react-icons/io";
@@ -9,9 +12,6 @@ import { BiLogOut } from "react-icons/bi";
 import { BsChatDots } from "react-icons/bs";
 import { BsFillBarChartLineFill } from "react-icons/bs";
 import { MdOutlineNightsStay } from "react-icons/md";
-// import { GrScorecard } from "react-icons/gr";
-// import { GrNotification } from "react-icons/gr";
-// import { IoIosArrowDropright } from "react-icons/io";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { MdOutlineDelete } from "react-icons/md";
 
@@ -217,7 +217,9 @@ const NavBar = () => {
               <div id='_manage'>you need to manage your</div> educational
               institution
             </h1>
-            <div className='manage_1'>Classe 369</div>
+            <div className='manage_1'>
+              <img id='logo' src={logo} />
+            </div>
             <p id='_intro1'>
               Classe369 là 1 phần mềm tiện ích giúp quản lý sinh viên một cách
               ngắn gọn và đầy đủ nhất thông qua những thống kê xác thực nhất và
@@ -283,6 +285,9 @@ const NavBar = () => {
           <p className={text3}>
             THÔNG<span id='noti'> BÁO</span>
           </p>
+          <div className='notiManagement'>
+            <NotiManagement />
+          </div>
           <div className={text6} onClick={notiDetail}>
             <div
               className={text8}
